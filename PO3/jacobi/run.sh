@@ -1,0 +1,8 @@
+./jacobi.C..exe 100 0 > T0.m
+./jacobi.C..exe 100 1 > T1.m
+./jacobi.C..exe 100 10 > T10.m
+./jacobi.C..exe 100 100 > T100.m
+./jacobi.C..exe 100 1000 > T1000.m
+./jacobi.C..exe 100 10000 > T10000.m
+./jacobi.C..exe 100 100000 > T100000.m
+./jacobi.C..exe 100 1000000 > T1000000.m

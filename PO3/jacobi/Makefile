@@ -1,0 +1,19 @@
+CC = nvc
+CFLAGS = -mp=gpu -gpu=cc80
+
+# module load nvhpc/22.7
+all: jacobi_serial jacobi_omp jacobi_omp_gpu_teams jacobi_omp_gpu_parallel
+jacobi_serial : jacobi_serial.c
+	$(CC) $(CFLAGS) $(LIBS) $< -o ${@}.exe
+
+jacobi_omp : jacobi_omp.c
+	$(CC) $(CFLAGS) $(LIBS) $< -o ${@}.exe
+
+jacobi_omp_gpu_teams : jacobi_omp_gpu_teams.c
+	$(CC) $(CFLAGS) $(LIBS) $< -o ${@}.exe
+
+jacobi_omp_gpu_parallel : jacobi_omp_gpu_parallel.c
+	$(CC) $(CFLAGS) $(LIBS) $< -o ${@}.exe
+
+clean:
+	rm -f *.o *.mod *.exe
